@@ -1,62 +1,221 @@
-# Kross Hugo Portfolio Forestry starter
+# Split
 
-![Homepage](https://user-images.githubusercontent.com/37659754/58154295-1a9c5300-7c93-11e9-992c-ad8d2ff8d99f.png)
+Split is a single page, centrally-divided layout for a professional online presense with a big image or video left with alongside content. It is a port of [Split](//onepagelove.com/split) by [One Page Love](//onepagelove.com).
 
-[Live Preview](http://demo.themefisher.com/kross-hugo/)
+This Hugo theme features an image or video visual section as well as a content section for your name, tagline, bio, and links.
 
-[Kross Hugo theme](https://github.com/themefisher/kross-hugo/) is developed by Themefisher.
+![Hugo Split Theme screenshot](https://raw.githubusercontent.com/escalate/hugo-split-theme/master/images/screenshot.png)
 
-## Requirements
 
-- GitHub, GitLab or BitBucket account
-- Hugo > 0.58.0
+## Installation
 
-## Content Management
+Inside the folder of your Hugo site run:
 
-![](static/images/kross-forestry.jpg)
+    $ cd themes
+    $ git clone https://github.com/escalate/hugo-split-theme.git
 
-[![import to Forestry](https://assets.forestry.io/import-to-forestryK.svg)](https://app.forestry.io/quick-start?repo=forestryio/kross-hugo-starter&engine=hugo&version=0.64.1)
+For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
 
-This project has been pre-configured to work with [Forestry](https://forestry.io) a git-based CMS, [import your repository in Forestry](https://app.forestry.io/quick-start?repo=forestryio/kross-hugo-starter&engine=hugo&version=0.64.1) and you'll be able to edit and preview your site ✨. \
 
-Any changes you make in Forestry will be commited back to the repo, and deployed if you use [Netlify](#netlify) or [ZEIT now](#zeit-now).
+## Getting started
 
-## Local development
+After installing the Split theme successfully it requires a just a few more steps to get your site finally running.
 
-```bash
-# clone the repository
-git clone git@github.com:forestryio/kross-hugo-starter.git
 
-# cd in the project directory
-cd kross-hugo-starter
+### The config file
 
-# Start local dev server
-hugo server
+Take a look inside the [`exampleSite`](//github.com/escalate/hugo-split-theme/tree/master/exampleSite) folder of this theme. You'll find a file called [`config.toml`](//github.com/escalate/hugo-split-theme/blob/master/exampleSite/config.toml). To use it, copy the [`config.toml`](//github.com/escalate/hugo-split-theme/blob/master/exampleSite/config.toml) in the root folder of your Hugo site. Feel free to customize this theme as you like.
+
+
+### Add content
+
+#### Homepage
+
+Add a file named `_index.md` inside content directory to create your homepage. Use TOML configuration elements to set `title` and `tagline` of your page. Simple write your content in markdown style.
+
+
+    $ hugo new content/_index.md
+
+
+```markdown
++++
+title = "Jenny Jones"
+tagline = "Designer. Stylist. Nomad."
++++
+
+Donec at libero id lectus porta dapibus eu in nibh. Cras id mauris sapien. Fusce viverra [luctus urna]({{< ref "luctus-urna.md" >}}) ac rutrum. Duis semper elit eu mi facilisis eleifend. Donec semper, [ipsum in]({{< ref "ipsum-in.md" >}}) malesuada congue, [purus sem]({{< ref "purus-sem.md" >}}) ullamcorper massa, sit amet lacinia nibh enim sed massa.
 ```
 
-## Deployment and hosting 
 
-### Netlify
+#### Additional pages
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/forestryio/kross-hugo-starter)
+You can create additional pages as usual inside content directory.
 
-1. Set the build command to: `hugo --gc --minify`
-2. Set the publish directory to: `public`
-3. Make sure to set `HUGO_VERSION` to 0.58.0 or above (tested with 0.64.1)
-3. Set the publish directory to: `public`
 
-That's it, now your site gets deployed automatically on `git push` or when saving documents from Forestry.
+    $ hugo new content/luctus-urna.md
 
-### ZEIT Now
 
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/forestryio/kross-hugo-starter)
+```markdown
++++
+title = "luctus urna"
++++
 
-Follow the steps.
+Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nullam sagittis. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.
+```
 
-## Feedback
 
-[Open an issue](https://github.com/themefisher/kross-hugo/issues) in the theme's repository.
+### Use an image
 
-## LICENSE
+Set `enable` to `true`. Add your image to the `static` folder and change `file` to the location of your image accordingly. By default the image position is centered, however you can specify your own by supplying `position` with a valid CSS position.
 
-MIT as specified in the theme's [LICENSE](https://github.com/themefisher/kross-hugo/blob/master/LICENSE) file 
+```toml
+[[params.visual.image]]
+  enable = true
+  file = "images/background.jpg"
+  position = "center center"
+```
+
+
+### Use a video
+
+First, disable the image by setting `enable` to `false` in `[params.visual.image]`.
+
+Second, enable the video by setting `enable` to `true` in `[params.visual.video]`.
+
+You can either use a video that you host or one that is on YouTube.
+
+##### Use your own video
+
+Add your video to the `static` folder and change `file` to the location of your video accordingly. Make sure you delete `youtubeId` or comment it out.
+
+```toml
+[[params.visual.image]]
+  enable = false
+  ...
+[params.visual.video]
+  enable = true
+  mute = true
+  file = "videos/background.mp4"
+  # youtubeId = "dk9uNWPP7EA"
+```
+
+##### Use a YouTube video
+
+Get the ID of the YouTube video and add it to `youtubeId`. Make sure you delete `file` or comment it out.
+
+```toml
+[[params.visual.image]]
+  enable = false
+  ...
+[params.visual.video]
+  enable = true
+  mute = true
+  # file = "videos/background.mp4"
+  youtubeId = "dk9uNWPP7EA"
+```
+
+##### Add Custom CSS
+
+Put custom css styles in static/css/style.css and enable this css in the config:
+
+```toml
+[params.custom.css]
+  enable = true
+```
+
+
+##### Additional settings
+
+Set `mute` to `true` if you want the video to play muted and `false` if you want the sound. The video is coded to autoplay and loop. If you want to change that the code can be found in [`layouts/partials/video.html`](//github.com/escalate/hugo-split-theme/tree/master/layouts/partials/video.html).
+
+
+### Add links
+
+You can have up to 3 column lists in the links section. `heading` is the list heading text. For the text links `text` is the link text and `url` is the link url. Follow the same snippet structure to add more links to a list. If you only want 1 or 2 lists, just remove the link list snippet you don't want.
+
+This is what generates one link list:
+
+```toml
+# Links List #1
+[[params.links]]
+  [params.links.list1]
+    heading = "Connect"
+
+    [[params.links.list1.link]]
+      text = "Blog"
+      url = "#"
+
+    [[params.links.list1.link]]
+      text = "Email"
+      url = "#"
+
+    [[params.links.list1.link]]
+      text = "Newsletter"
+      url = "#"
+```
+
+
+### Add metadata
+
+`author` and `description` metadata helps search engines with how to display your site in search results. `shareImage` and `twitterHandle` help improves how your content is displayed when your site is shared across social media sites.
+
+```toml
+author = "Jenny Jones"
+description = "Split is a centrally-divided layout for a professional online presence with a big image or video left with alongside content."
+shareImage = "images/social.jpg"
+twitterHandle = "onepagelove"
+```
+
+
+### Add favicon
+Replace [`static/favicon.ico`](//github.com/escalate/hugo-split-theme/tree/master/static/favicon.ico) with your favicon. If you don't want just delete `favicon.ico` and the line below.
+
+```toml
+favicon = "favicon.ico"
+```
+
+
+### Add copyright
+Set `copyright` with the text you want for your copyright.
+
+```toml
+copyright = "&copy;2017 Your Name"
+```
+
+
+### Add Google Analytics
+
+Enable Google Analytics by adding your tracking id to `googleAnalytics`. Leave empty or remove if you don't want.
+
+```toml
+googleAnalytics = "UA-XXXXXXXX-1"
+```
+
+
+### Nearly finished
+
+In order to see your site in action, run Hugo's built-in local server.
+
+    $ hugo server
+
+Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
+
+
+## Contributing
+
+Did you found a bug or got an idea for a new feature? Feel free to use the [issue tracker](//github.com/escalate/hugo-split-theme/issues) to let me know. Or make directly a [pull request](//github.com/escalate/hugo-split-theme/pulls).
+
+
+## License
+
+The original template is released under the [Creative Commons Attribution 3.0 License](//github.com/escalate/hugo-split-theme/blob/master/LICENSE.md). Please keep the original attribution link when using for your own project. If you'd like to use the template without the attribution, you can check out the license option via the template [author's website](//onepagelove.com/split).
+
+
+## Annotations
+
+- Original [Split](//onepagelove.com/split) Template by [One Page Love](//onepagelove.com)
+- [Girl Image](https://unsplash.com/photos/pAs4IM6OGWI) by Joe Gardner
+- [Clouds Over Mountain Video](http://www.wedistill.io/videos/clouds-over-the-mountain-hd-stock-video) by John Guinn
+- Video integration CSS ninja skills by my bud [Manu](https://twitter.com/manuelmoreale)
+
+Also thanks to [Steve Francia](//github.com/spf13) for creating [Hugo](//gohugo.io) and the awesome community around the project.

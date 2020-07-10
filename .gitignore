@@ -1,6 +1,2 @@
-### Hugp
-/public/
-/resources/_gen/
-
-### macOS
 .DS_Store
+Thumbs.db
