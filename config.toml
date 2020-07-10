@@ -61,4 +61,6 @@ copyright = "&copy;Abdul Muthalif"
         text = "Youtube"
         url = "https://www.youtube.com/channel/UCHrdBkCsIIAoKS0YkG08r4w"
 
+[params.custom.css]
+  enable = true
 
