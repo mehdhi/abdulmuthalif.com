@@ -20,16 +20,16 @@ URL = "contact"
 name = "Contact"
 weight = 5
 [params]
-address = "125/A, CA Commercial Area, California, USA"
-author = "Johnathan Smith"
-copyright = "Copyrighht &copy; 2020 a theme by [gethugothemes](https://gethugothemes.com)"
+address = ""
+author = ""
+copyright = ""
 description = "This is meta description"
-email = "steve.fruits@email.com"
-google_analitycs_id = "Your ID"
+email = "contact@abdulmuthalif.com"
+google_analitycs_id = ""
 home = "Home"
 logo = "images/logo.png"
-phone = "+880 2544 658 256"
-theme_color = "#41228e"
+phone = "+94"
+theme_color = "#22A11D"
 [params.contact]
 enable = true
 form_action = "#"
