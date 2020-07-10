@@ -40,10 +40,6 @@ copyright = "&copy;Abdul Muthalif"
       heading = "Contact"
 
       [[params.links.list1.link]]
-        text = "Email"
-        url = "mailto:contact@abdulmuthalif.com"
-
-      [[params.links.list1.link]]
         text = "Facebook"
         url = "https://facebook.com/mtamuthalif"
 
