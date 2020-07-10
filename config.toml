@@ -31,12 +31,6 @@ copyright = "&copy;Abdul Muthalif"
       file = "images/abdulmuthalif.png"
       position = "center center"
 
-    # Video
-    [params.visual.video]
-      enable = false
-      mute = true
-      file = "videos/background.mp4"
-      # youtubeId = "dk9uNWPP7EA"
 
   # Links
   #
