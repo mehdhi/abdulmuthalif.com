@@ -51,6 +51,9 @@ URL = "plugins/shuffle/shuffle.min.js"
 enable = true
 preloader = ""
 [[params.social]]
+URL = "https://www.youtube.com/channel/UCHrdBkCsIIAoKS0YkG08r4w"
+icon = "ti-youtube"
+[[params.social]]
 URL = "https://facebook.com/mtamuthalif"
 icon = "ti-facebook"
 [[params.social]]
