@@ -1,0 +1,64 @@
+# Site settings
+baseURL = "//abdulmuthalif.com"
+languageCode = "en-US"
+title = "Abdul Muthalif - UNP Candidate"
+theme = "hugo-split-theme"
+disableKinds = ["section", "taxonomy", "taxonomyTerm", "RSS", "sitemap"]
+
+# Enter your tracking code to enable Google Analytics
+googleAnalytics = ""
+
+# Copyright
+copyright = "&copy;Abdul Muthalif"
+
+[params]
+
+  # Metadata for search engines and social sharing
+  author = "Mehdhi Nawaz"
+  description = "Site for professional online presence with a big image or video left with alongside content."
+  shareImage = "images/social.jpg"
+  twitterHandle = "m3hdhi"
+
+  # Favicon
+  favicon = "favicon.ico"
+
+  # Section - Visual
+  [params.visual]
+
+    # Image
+    [params.visual.image]
+      enable = true
+      file = "images/abdulmuthalif.png"
+      position = "center center"
+
+    # Video
+    [params.visual.video]
+      enable = false
+      mute = true
+      file = "videos/background.mp4"
+      # youtubeId = "dk9uNWPP7EA"
+
+  # Links
+  #
+  # Links List #1
+  [[params.links]]
+    [params.links.list1]
+      heading = "Contact"
+
+      [[params.links.list1.link]]
+        text = "Email"
+        url = "mailto:contact@abdulmuthalif.com"
+
+      [[params.links.list1.link]]
+        text = "Facebook"
+        url = "https://facebook.com/mtamuthalif"
+
+      [[params.links.list1.link]]
+        text = "Instagram"
+        url = "https://instagram.com/abdulmuthalif_"
+
+      [[params.links.list1.link]]
+        text = "Youtube"
+        url = "https://www.youtube.com/channel/UCHrdBkCsIIAoKS0YkG08r4w"
+
+
