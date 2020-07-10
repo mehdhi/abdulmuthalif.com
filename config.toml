@@ -14,10 +14,10 @@ copyright = "&copy;Abdul Muthalif"
 [params]
 
   # Metadata for search engines and social sharing
-  author = "Jenny Jones"
-  description = "Split is a centrally-divided layout for a professional online presence with a big image or video left with alongside content."
+  author = "Mehdhi Nawaz"
+  description = "Site for professional online presence with a big image or video left with alongside content."
   shareImage = "images/social.jpg"
-  twitterHandle = "onepagelove"
+  twitterHandle = "m3hdhi"
 
   # Favicon
   favicon = "favicon.ico"
@@ -43,50 +43,22 @@ copyright = "&copy;Abdul Muthalif"
   # Links List #1
   [[params.links]]
     [params.links.list1]
-      heading = "Connect"
-
-      [[params.links.list1.link]]
-        text = "Blog"
-        url = "#"
+      heading = "Contact"
 
       [[params.links.list1.link]]
         text = "Email"
-        url = "#"
+        url = "mailto:contact@abdulmuthalif.com"
 
       [[params.links.list1.link]]
-        text = "Newsletter"
-        url = "#"
+        text = "Facebook"
+        url = "https://facebook.com/mtamuthalif"
 
-  # Links List #2
-  [[params.links]]
-    [params.links.list2]
-      heading = "Social"
-
-      [[params.links.list2.link]]
-        text = "Twitter"
-        url = "#"
-
-      [[params.links.list2.link]]
+      [[params.links.list1.link]]
         text = "Instagram"
-        url = "#"
+        url = "https://instagram.com/abdulmuthalif_"
 
-      [[params.links.list2.link]]
-        text = "Dribbble"
-        url = "#"
+      [[params.links.list1.link]]
+        text = "Youtube"
+        url = "https://www.youtube.com/channel/UCHrdBkCsIIAoKS0YkG08r4w"
 
-  # Links List #3
-  [[params.links]]
-    [params.links.list3]
-      heading = "Network"
 
-      [[params.links.list3.link]]
-        text = "Link One"
-        url = "#"
-
-      [[params.links.list3.link]]
-        text = "Link Two"
-        url = "#"
-
-      [[params.links.list3.link]]
-        text = "Link Three"
-        url = "#"
